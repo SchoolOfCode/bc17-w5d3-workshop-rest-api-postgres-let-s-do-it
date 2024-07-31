@@ -1,9 +1,10 @@
 // Import the 'pool' object so our helper functions can interact with the PostgreSQL database
 import { pool } from "./db/index.js";
 
+// GET BOOKS WORKING
+
 export async function getBooks() {
   // Query the database and return all books
-
   // Define the SQL query to fetch all books from the 'books' table
   const queryText = "SELECT * FROM books";
 
@@ -32,6 +33,8 @@ export async function getBookById(id) {
 
 export async function createBook(book) {
   // Query the database to create a book and return the newly created book
+  const queryText = "INSERT INTO books (id, title, published_date, author_id)"
+  const result = await pool.query(queryText, [[id], [title], [published_date], [author_id]])
 }
 
 export async function updateBookById(id, updates) {

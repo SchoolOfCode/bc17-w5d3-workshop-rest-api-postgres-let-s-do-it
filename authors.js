@@ -3,6 +3,7 @@ import { pool } from "./db/index.js";
 
 export async function getAuthors() {
   // Query the database and return all authors
+  
 }
 
 export async function getAuthorById(id) {
